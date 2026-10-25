@@ -1,0 +1,10 @@
+{
+    "id": "beautiful-design-gallery",
+    "name": "Beautiful Design Gallery",
+    "version": "0.1.0",
+    "minAppVersion": "1.12.0",
+    "description": "A collection of beautiful Obsidian plugins.",
+    "author": "Mayaz Rakib",
+    "authorUrl": "https://github.com/mayazrakib",
+    "isDesktopOnly": false
+}
