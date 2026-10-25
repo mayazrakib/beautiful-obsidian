@@ -65,6 +65,32 @@ Typed option interfaces are exported beside the factories. Editor completion and
 | `create_empty_state` | `title` and `description`; returns an owned surface for optional actions. | Describes the situation and next step with text. |
 | `create_feedback` | `state` of `loading`, `success`, `error`, or `info`, and `message`. | Errors use `alert`; other states use `status`. Provide a message that communicates meaning without color. |
 
+The Inbox workspace also consumes these shared primitives. Each belongs to its parent `DesignSurface`; disposing that surface removes its DOM and listeners. Consumers own validation, persistence, selection, and asynchronous state.
+
+| Factory | Typed options and result | Accessibility and lifecycle |
+|---|---|---|
+| `create_text_area(surface, options)` | `TextAreaOptions`: required `label` and `on_change`; optional `value`, `placeholder`, `rows`, and `is_disabled`. Returns native `TextAreaComponent`. | Required accessible name, native multiline editing, and callback disposal. Provide visible form context. |
+| `create_checkbox(surface, options)` | `CheckboxOptions`: required `label`, `value`, and `on_change`; optional `is_disabled`. Returns `HTMLInputElement`. | Native checkbox semantics and Space operation. Parent disposal removes listeners and owned DOM. |
+| `create_card(parent, label)` | Returns `CardRegions` with `surface`, `content`, and `actions`. | Required accessible name. Consumers add appropriate collection semantics, headings, and explicit actions. The card has no implicit click behavior. |
+
+For example, compose a named card and native multiline input:
+
+```ts
+const card = create_card(
+    surface,
+    "Capture draft",
+);
+
+create_text_area(
+    card.content,
+    {
+        label: "Capture content",
+        rows: 4,
+        on_change: (value) => save_draft(value),
+    },
+);
+```
+
 ## Interaction conventions
 
 - Give actions explicit buttons and inputs explicit labels. Preserve native focus indicators.

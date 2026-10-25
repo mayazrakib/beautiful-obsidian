@@ -1,5 +1,5 @@
 {
-    "name": "beautiful_obsidian",
+    "name": "beautiful-obsidian",
     "version": "0.1.0",
     "private": true,
     "type": "module",
@@ -8,11 +8,11 @@
     "license": "MIT",
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/mayazrakib/beautiful_obsidian.git"
+        "url": "git+https://github.com/mayazrakib/beautiful-obsidian.git"
     },
-    "homepage": "https://github.com/mayazrakib/beautiful_obsidian#readme",
+    "homepage": "https://github.com/mayazrakib/beautiful-obsidian#readme",
     "bugs": {
-        "url": "https://github.com/mayazrakib/beautiful_obsidian/issues"
+        "url": "https://github.com/mayazrakib/beautiful-obsidian/issues"
     },
     "engines": {
         "node": ">=24 <25",
@@ -23,12 +23,16 @@
         "packages/*"
     ],
     "scripts": {
-        "dev": "npm run dev --workspace=@beautiful/design",
-        "build": "npm run build --workspaces --if-present && node scripts/verify_build.mjs",
+        "dev": "npm run build --workspace=@beautiful/design && node scripts/dev.mjs",
+        "build": "npm run build --workspace=@beautiful/design && npm run build --workspace=@beautiful/inbox && node scripts/verify_build.mjs",
         "typecheck": "npm run typecheck --workspaces --if-present",
         "lint": "eslint .",
         "test": "vitest run",
-        "check": "npm run typecheck && npm run lint && npm test && npm run build"
+        "check": "npm run typecheck && npm run lint && npm test && npm run build",
+        "dev:design": "npm run dev --workspace=@beautiful/design",
+        "dev:inbox": "npm run build --workspace=@beautiful/design && npm run dev --workspace=@beautiful/inbox",
+        "pretypecheck": "npm run build --workspace=@beautiful/design",
+        "pretest": "npm run build --workspace=@beautiful/design"
     },
     "devDependencies": {
         "@eslint/js": "^10.0.0",

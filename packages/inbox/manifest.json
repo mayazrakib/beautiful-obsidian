@@ -1,0 +1,10 @@
+{
+    "id": "beautiful-inbox",
+    "name": "Beautiful Inbox",
+    "version": "0.1.0",
+    "minAppVersion": "1.12.2",
+    "description": "A collection of beautiful Obsidian plugins.",
+    "author": "Mayaz Rakib",
+    "authorUrl": "https://github.com/mayazrakib",
+    "isDesktopOnly": false
+}

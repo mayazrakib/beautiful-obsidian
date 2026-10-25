@@ -32,3 +32,7 @@ export type {
     ToolbarRegions,
 } from "./patterns";
 export { create_surface, DesignSurface } from "./surface";
+export { create_card } from "./collections";
+export type { CardRegions } from "./collections";
+export { create_checkbox, create_text_area } from "./inputs";
+export type { CheckboxOptions, TextAreaOptions } from "./inputs";

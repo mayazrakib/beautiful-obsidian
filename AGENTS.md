@@ -2,7 +2,7 @@
 
 ## Architecture
 
-This repository contains Beautiful's shared Obsidian design foundation. `design/` owns presentation primitives and patterns; future plugins under `packages/` own domain behavior. Read [the design guide](design/README.md) before changing its public interfaces.
+This repository contains Beautiful's shared Obsidian design foundation and Beautiful Inbox. `design/` owns presentation primitives and patterns; plugins under `packages/` own domain behavior. Read [the design guide](design/README.md) before changing its public interfaces.
 
 ## Contracts
 
@@ -20,4 +20,4 @@ Use the exact project description, "A collection of beautiful Obsidian plugins."
 
 Use Node.js 24 and npm 11. Run `npm ci` and `npm run check`. The checks execute without task-result caching. Use the gallery for native checks and record its Obsidian version, theme, platform, and results separately. Mocked DOM tests do not prove Obsidian integration.
 
-Do not add placeholder files to `packages/` or `assets/`. Do not implement productivity domain features as design-system examples.
+Do not add placeholder files to `assets/` or empty plugin directories. Do not implement productivity domain features as design-system examples.

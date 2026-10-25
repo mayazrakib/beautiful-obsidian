@@ -8,11 +8,11 @@
     "license": "MIT",
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/mayazrakib/beautiful_obsidian.git"
+        "url": "git+https://github.com/mayazrakib/beautiful-obsidian.git"
     },
-    "homepage": "https://github.com/mayazrakib/beautiful_obsidian#readme",
+    "homepage": "https://github.com/mayazrakib/beautiful-obsidian#readme",
     "bugs": {
-        "url": "https://github.com/mayazrakib/beautiful_obsidian/issues"
+        "url": "https://github.com/mayazrakib/beautiful-obsidian/issues"
     },
     "files": [
         "dist"

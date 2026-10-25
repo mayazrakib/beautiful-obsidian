@@ -58,3 +58,30 @@
 .beautiful_surface.beautiful_feedback[data-state="error"] {
     color: var(--text-error);
 }
+
+.beautiful_surface.beautiful_card {
+    display: flex;
+    flex-direction: column;
+    gap: var(--beautiful_gap);
+    padding: var(--size-4-3);
+    border: var(--border-width) solid var(--beautiful_border);
+    border-radius: var(--radius-m);
+    min-width: 0;
+}
+
+.beautiful_surface.beautiful_card_content {
+    flex: 1;
+    min-height: 0;
+    overflow-wrap: anywhere;
+}
+
+.beautiful_surface.beautiful_card_actions {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--beautiful_gap);
+}
+
+.beautiful_surface[hidden] {
+    display: none !important;
+}

@@ -1,0 +1,378 @@
+.beautiful_surface.beautiful_inbox {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    min-height: 0;
+    gap: var(--size-4-2);
+    padding: var(--size-4-4);
+    box-sizing: border-box;
+    container-type: inline-size;
+    container-name: beautiful_inbox;
+}
+
+.beautiful_inbox .beautiful_inbox_heading {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-shrink: 0;
+    gap: var(--size-4-3);
+}
+
+.beautiful_inbox .beautiful_inbox_heading h3 {
+    display: flex;
+    align-items: center;
+    gap: var(--size-4-2);
+    margin-block: var(--size-4-1);
+}
+
+.beautiful_inbox .beautiful_inbox_header_controls {
+    flex: 1 1 20rem;
+}
+
+.beautiful_inbox .beautiful_inbox_header_controls .beautiful_toolbar_filters {
+    flex: 1;
+    min-width: 8rem;
+}
+
+.beautiful_inbox .beautiful_inbox_search {
+    width: 100%;
+    min-width: 0;
+}
+
+.beautiful_inbox .beautiful_inbox_selection_toolbar {
+    position: absolute;
+    z-index: 20;
+    bottom: var(--size-4-6);
+    inset-inline-start: var(--size-4-6);
+    max-width: calc(100% - var(--size-4-6) * 2);
+    background: var(--background-secondary);
+    box-shadow: var(--shadow-s);
+    padding: var(--size-4-2);
+    border: var(--border-width) solid var(--background-modifier-border);
+    border-radius: var(--radius-m);
+}
+
+.beautiful_inbox .beautiful_inbox_body {
+    display: flex;
+    flex: 1;
+    min-height: 12rem;
+    gap: var(--size-4-3);
+}
+
+.beautiful_inbox .beautiful_inbox_canvas {
+    position: relative;
+    flex: 1;
+    min-width: 0;
+    min-height: 0;
+    overflow: hidden;
+    touch-action: none;
+    overscroll-behavior: contain;
+    border: var(--border-width) solid var(--background-modifier-border);
+    border-radius: var(--radius-m);
+    background-color: var(--background-primary);
+}
+
+.beautiful_inbox .beautiful_inbox_canvas.has_grid {
+    background-image: radial-gradient(var(--background-modifier-border) 1px, transparent 1px);
+    background-size: calc(var(--beautiful_canvas_grid_size) * 2) calc(var(--beautiful_canvas_grid_size) * 2);
+    background-position: var(--beautiful_canvas_pan_x) var(--beautiful_canvas_pan_y);
+}
+
+.beautiful_inbox .beautiful_inbox_canvas_world,
+.beautiful_inbox .beautiful_inbox_canvas_guides {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1px;
+    height: 1px;
+    transform-origin: 0 0;
+    pointer-events: none;
+}
+
+.beautiful_inbox .beautiful_inbox_canvas_card {
+    position: absolute;
+    box-sizing: border-box;
+    pointer-events: auto;
+    overflow: hidden;
+    background: var(--background-primary);
+    transition: none;
+}
+
+.beautiful_inbox .beautiful_inbox_canvas_card .beautiful_card_content {
+    overflow: hidden;
+}
+
+.beautiful_inbox .beautiful_inbox_canvas_card:hover {
+    background: var(--background-primary-alt);
+}
+
+.beautiful_inbox .beautiful_inbox_canvas_card.is_selected {
+    outline: var(--border-width) solid var(--interactive-accent);
+    outline-offset: calc(-1 * var(--border-width));
+}
+
+.beautiful_inbox .beautiful_inbox_canvas_card.is_dragging {
+    z-index: 5;
+    user-select: none;
+    box-shadow: var(--shadow-s);
+}
+
+.beautiful_inbox .beautiful_inbox_item_header {
+    display: flex;
+    align-items: center;
+    gap: var(--size-4-2);
+    cursor: grab;
+}
+
+.beautiful_inbox .beautiful_inbox_kind_icon {
+    display: inline-flex;
+    flex: 0 0 auto;
+    color: var(--text-muted);
+}
+
+.beautiful_inbox .beautiful_inbox_item_title {
+    display: block;
+    flex: 1;
+    min-width: 0;
+    max-width: 100%;
+    height: auto;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: var(--text-normal);
+    font: inherit;
+    text-align: start;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.beautiful_inbox .beautiful_inbox_item_title:not(:focus-visible) {
+    box-shadow: none;
+}
+
+.beautiful_inbox .beautiful_inbox_item_title:hover {
+    color: var(--text-accent);
+    background: transparent;
+}
+
+.beautiful_inbox .beautiful_inbox_item_title:focus-visible {
+    outline: var(--border-width) solid var(--background-modifier-border-focus);
+    outline-offset: var(--size-2-1);
+}
+
+.beautiful_inbox .beautiful_inbox_item_preview {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+    margin-block: var(--size-4-2);
+    overflow-wrap: anywhere;
+}
+
+.beautiful_inbox .beautiful_inbox_item_metadata {
+    margin-block: var(--size-4-1);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.beautiful_inbox .beautiful_inbox_group_badge {
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.beautiful_inbox .beautiful_inbox_card_tools {
+    display: flex;
+    align-items: center;
+    gap: var(--size-4-1);
+    opacity: 0;
+}
+
+.beautiful_inbox .beautiful_inbox_card_tools [data-canvas-handle="move"] {
+    cursor: grab;
+}
+
+.beautiful_inbox .beautiful_inbox_resize_handle {
+    position: absolute;
+    bottom: var(--size-4-1);
+    right: var(--size-4-1);
+    cursor: nwse-resize;
+    opacity: 0;
+}
+
+.beautiful_inbox .beautiful_inbox_canvas_card:hover .beautiful_inbox_card_tools,
+.beautiful_inbox .beautiful_inbox_canvas_card:focus-within .beautiful_inbox_card_tools,
+.beautiful_inbox .beautiful_inbox_canvas_card.is_selected .beautiful_inbox_card_tools,
+.beautiful_inbox .beautiful_inbox_canvas_card:hover .beautiful_inbox_resize_handle,
+.beautiful_inbox .beautiful_inbox_canvas_card:focus-within .beautiful_inbox_resize_handle,
+.beautiful_inbox .beautiful_inbox_canvas_card.is_selected .beautiful_inbox_resize_handle {
+    opacity: 1;
+}
+
+.beautiful_inbox .beautiful_inbox_card_thumbnail {
+    display: block;
+    width: 100%;
+    max-height: 5rem;
+    object-fit: cover;
+    border-radius: var(--radius-s);
+}
+
+.beautiful_inbox .beautiful_inbox_overview {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.beautiful_inbox .beautiful_inbox_overview_label {
+    position: absolute;
+    bottom: var(--size-4-2);
+    left: var(--size-4-2);
+    max-width: calc(100% - var(--size-4-4));
+    padding: var(--size-4-2);
+    border-radius: var(--radius-s);
+    background: var(--background-secondary);
+    pointer-events: none;
+}
+
+.beautiful_inbox .beautiful_inbox_canvas_guides {
+    z-index: 10;
+}
+
+.beautiful_inbox .beautiful_inbox_alignment_guide {
+    position: absolute;
+    border-color: var(--interactive-accent);
+    border-style: solid;
+    border-width: 0;
+}
+
+.beautiful_inbox .beautiful_inbox_screen_reader {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+}
+
+.beautiful_inbox .beautiful_inbox_canvas_empty {
+    position: absolute;
+    inset: var(--size-4-4);
+    pointer-events: none;
+}
+
+.beautiful_inbox .beautiful_inbox_inspector {
+    display: none;
+    overflow: auto;
+    flex: 0 1 24rem;
+    min-width: 0;
+    border-inline-start: var(--border-width) solid var(--background-modifier-border);
+    padding-inline-start: var(--size-4-3);
+}
+
+.beautiful_inbox .beautiful_inbox_inspector.is_open {
+    display: block;
+}
+
+.beautiful_surface .beautiful_inbox_capture_fields,
+.beautiful_surface .beautiful_inbox_item_fields {
+    display: flex;
+    flex-direction: column;
+    gap: var(--size-4-2);
+    margin-block: var(--size-4-2);
+}
+
+.beautiful_surface .beautiful_inbox_capture_fields input,
+.beautiful_surface .beautiful_inbox_capture_fields textarea,
+.beautiful_surface .beautiful_inbox_item_fields input,
+.beautiful_surface .beautiful_inbox_item_fields textarea,
+.beautiful_surface .beautiful_inbox_import_section textarea {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.beautiful_surface .beautiful_inbox_capture_metadata {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--size-4-2);
+}
+
+.beautiful_surface .beautiful_inbox_capture_metadata input {
+    flex: 1 1 10rem;
+    min-width: 0;
+}
+
+.beautiful_inbox .beautiful_inbox_quick_capture {
+    max-height: 40%;
+    overflow: auto;
+    flex-shrink: 0;
+}
+
+.beautiful_surface .beautiful_inbox_composer,
+.beautiful_surface .beautiful_inbox_import_section,
+.beautiful_surface .beautiful_inbox_capture_options {
+    margin-block: var(--size-4-2);
+}
+
+.beautiful_surface .beautiful_inbox_attachments img {
+    display: block;
+    max-width: 100%;
+    max-height: 18rem;
+    object-fit: contain;
+}
+
+.beautiful_surface .beautiful_inbox_attachments audio {
+    display: block;
+    max-width: 100%;
+}
+
+.beautiful_surface .beautiful_inbox_attachment {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--size-4-2);
+    margin-block: var(--size-4-3);
+}
+
+.beautiful_surface .beautiful_inbox_attachment_queue > div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--size-4-2);
+    margin-block: var(--size-4-1);
+}
+
+.beautiful_surface .beautiful_inbox_markdown_preview {
+    overflow-wrap: anywhere;
+    padding-block: var(--size-4-2);
+}
+
+.beautiful_inbox [hidden] {
+    display: none !important;
+}
+
+@container beautiful_inbox (max-width: 650px) {
+    .beautiful_inbox .beautiful_inbox_body {
+        flex-direction: column;
+    }
+
+    .beautiful_inbox .beautiful_inbox_inspector.is_open {
+        flex: 0 1 45%;
+        border-inline-start: 0;
+        border-top: var(--border-width) solid var(--background-modifier-border);
+        padding-inline-start: 0;
+        padding-block-start: var(--size-4-2);
+    }
+}
+
+@media (hover: none) {
+    .beautiful_inbox .beautiful_inbox_card_tools,
+    .beautiful_inbox .beautiful_inbox_resize_handle {
+        opacity: 1;
+    }
+}

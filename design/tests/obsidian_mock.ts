@@ -70,7 +70,6 @@ export class ButtonComponent {
     constructor(container: HTMLElement) {
         this.buttonEl = container.ownerDocument.createElement("button");
         this.buttonEl.type = "button";
-
         container.append(this.buttonEl);
     }
 
@@ -115,7 +114,6 @@ export class ExtraButtonComponent {
 
     constructor(container: HTMLElement) {
         this.extraSettingsEl = container.ownerDocument.createElement("div");
-
         container.append(this.extraSettingsEl);
     }
 
@@ -241,7 +239,10 @@ export class DropdownComponent {
         container.append(this.selectEl);
     }
 
-    addOptions(options: Record<string, string>): this {
+    addOptions(options: Record<
+        string,
+        string
+    >): this {
         for (const [value, label] of Object.entries(options)) {
             const option = document.createElement("option");
             option.value = value;
@@ -380,5 +381,49 @@ export class Modal {
     close(): void {
         this.onClose();
         this.contentEl.remove();
+    }
+}
+
+export class TextAreaComponent {
+    readonly inputEl: HTMLTextAreaElement;
+    private callback: (value: string) => void = () => { };
+
+    constructor(container: HTMLElement) {
+        this.inputEl = container.ownerDocument.createElement("textarea");
+
+        this.inputEl.addEventListener(
+            "input",
+            () => this.callback(this.inputEl.value),
+        );
+
+        container.append(this.inputEl);
+    }
+
+    setValue(value: string): this {
+        this.inputEl.value = value;
+
+        return this;
+    }
+
+    getValue(): string {
+        return this.inputEl.value;
+    }
+
+    setPlaceholder(value: string): this {
+        this.inputEl.placeholder = value;
+
+        return this;
+    }
+
+    setDisabled(is_disabled: boolean): this {
+        this.inputEl.disabled = is_disabled;
+
+        return this;
+    }
+
+    onChange(callback: (value: string) => void): this {
+        this.callback = callback;
+
+        return this;
     }
 }

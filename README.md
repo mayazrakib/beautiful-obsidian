@@ -2,7 +2,7 @@
 
 A collection of beautiful Obsidian plugins.
 
-Beautiful is a TypeScript monorepo by Mayaz Rakib. Its shared design system uses native Obsidian controls and theme variables. The initial repository contains the foundation and a development gallery; the productivity plugins are not implemented yet.
+`beautiful-obsidian` is a TypeScript monorepo by Mayaz Rakib. Its shared design system uses native Obsidian controls and theme variables. The repository contains the foundation, a development gallery, and [Beautiful Inbox](packages/inbox/README.md), a Markdown-based universal capture system with native Bases layouts.
 
 ## Development
 
@@ -19,10 +19,10 @@ npm run dev
 ## Structure
 
 - `design/` contains the private `@beautiful/design` workspace, documentation, tests, and development gallery.
-- `packages/` is reserved for Beautiful Inbox, Calendar, Tasks, Projects, Reminders, Habits, and Focus.
+- `packages/inbox/` contains Beautiful Inbox. Other Beautiful plugins can be added under `packages/`.
 - `assets/` is reserved for shared assets.
 
-`packages/` and `assets/` are intentionally empty. Git does not store empty directories, so a fresh clone needs them recreated with `mkdir -p packages assets`. Neither directory contains a placeholder file.
+`assets/` is intentionally empty and has no placeholder file. Git does not store empty directories; recreate it with `mkdir -p assets` after cloning.
 
 ## Design system
 

@@ -13,7 +13,7 @@ export default defineConfig({
     },
     test: {
         environment: "jsdom",
-        include: ["design/tests/**/*.test.ts"],
+        include: ["design/tests/**/*.test.ts", "packages/*/tests/**/*.test.ts"],
         clearMocks: true,
     },
 });

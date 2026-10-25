@@ -1,0 +1,33 @@
+{
+    "name": "@beautiful/inbox",
+    "version": "0.1.0",
+    "private": true,
+    "type": "module",
+    "description": "A collection of beautiful Obsidian plugins.",
+    "author": "Mayaz Rakib",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mayazrakib/beautiful-obsidian.git"
+    },
+    "homepage": "https://github.com/mayazrakib/beautiful-obsidian#readme",
+    "bugs": {
+        "url": "https://github.com/mayazrakib/beautiful-obsidian/issues"
+    },
+    "scripts": {
+        "dev": "node build.mjs --watch",
+        "build": "tsc --noEmit -p tsconfig.json && tsc -p tsconfig.types.json && node build.mjs",
+        "typecheck": "tsc --noEmit -p tsconfig.json"
+    },
+    "dependencies": {
+        "@beautiful/design": "0.1.0"
+    },
+    "devDependencies": {
+        "obsidian": "1.14.4"
+    },
+    "exports": {
+        "./contracts": {
+            "types": "./dist/types/contracts.d.ts"
+        }
+    }
+}

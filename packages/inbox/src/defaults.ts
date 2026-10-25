@@ -1,0 +1,25 @@
+import type { InboxSettings } from "./contracts";
+
+export const DEFAULT_SETTINGS: InboxSettings = {
+    base_folder: "Beautiful/Inbox",
+    base_name: "Inbox",
+    capture_folder: "Beautiful/Inbox/Items",
+    attachment_folder: "Beautiful/Inbox/Attachments",
+    filename_template: "{date} {title} {id}",
+    default_tags: [],
+    card_columns: 3,
+    snap_grid_size: 16,
+    should_snap_cards: true,
+    should_show_grid: true,
+    should_show_previews: true,
+    should_show_metadata: true,
+    should_show_capture: false,
+    should_save_uri_automatically: false,
+    should_open_after_capture: false,
+    should_clear_after_capture: true,
+    is_audio_enabled: true,
+    should_restore_due: true,
+    attachment_limit_mb: 25,
+    import_limit: 500,
+    email_accounts: [],
+};
