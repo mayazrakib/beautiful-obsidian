@@ -1,6 +1,6 @@
 """Exercise real canvas input in the authorized Obsidian_Tests native vault.
 
-Run after deploying the current plugin: python scripts/verify_inbox_canvas_native.py.
+Run after deploying the current plugin: python tools/scripts/verify_inbox_canvas_native.py.
 This retains fixture card layout changes and evidence in the isolated vault.
 No OAuth, microphone, community-theme installation, or user vault is accessed.
 """
@@ -362,7 +362,7 @@ class CanvasVerification:
         except Exception as error:
             self.report.setdefault("gesture_streams", {})["optional_single_card_mouse_drag"] = {"passed": False, "error": str(error)}
         content = self.native.evaluate("const p=app.plugins.plugins['beautiful-inbox'];return await app.vault.read(await p.repository.ensure_base());")
-        registered_source = (Path(__file__).resolve().parents[1] / "packages/inbox/src/ui/inbox_view.ts").read_text(encoding="utf-8")
+        registered_source = (Path(__file__).resolve().parents[2] / "packages/inbox/src/ui/inbox_view.ts").read_text(encoding="utf-8")
         source_types = re.findall(r'registerBasesView\(\s*"([^"]+)"', registered_source)
         base_types = re.findall(r"(?m)^\s*(?:-\s*)?type:\s*[\"']?([A-Za-z_]+)", content)
         self.check("Source registers only Beautiful Inbox Cards", source_types == ["beautiful_inbox_cards"], source_types)

@@ -1,37 +1,52 @@
-# Beautiful Obsidian
+# `beautiful-obsidian`
+
+![Version](https://img.shields.io/badge/Version-0.1.0-737373?style=flat-square)
+![License](https://img.shields.io/badge/License-MIT-737373?style=flat-square)
+![Languages](https://img.shields.io/badge/Languages-TypeScript%20and%20Python-737373?style=flat-square)
+![Frameworks](https://img.shields.io/badge/Frameworks-Obsidian-737373?style=flat-square)
+![Compatibility](https://img.shields.io/badge/Compatibility-Unknown-737373?style=flat-square)
+![Build](https://img.shields.io/badge/Build-Not%20verified-737373?style=flat-square)
+![Tests](https://img.shields.io/badge/Tests-Not%20measured-737373?style=flat-square)
+![Vulnerabilities](https://img.shields.io/badge/Vulnerabilities-Unknown-737373?style=flat-square)
+
+## 1. Introduction
 
 A collection of beautiful Obsidian plugins.
 
-`beautiful-obsidian` is a TypeScript monorepo by Mayaz Rakib. Its shared design system uses native Obsidian controls and theme variables. The repository contains the foundation, a development gallery, and [Beautiful Inbox](packages/inbox/README.md), a Markdown-based universal capture system with native Bases layouts.
+The monorepo contains a shared native design library and Beautiful Inbox, a Markdown capture system with native Bases layouts.
 
-## Development
+## 2. Usage
 
-Use Node.js 24 and npm 11. The package manager version is recorded in the root manifest.
+Use Node.js 24.22.0, npm 11.19.1, and Task 3.54.0. Run `task init`, `task test`, and `task build`. `npm run dev` watches the library and plugins. Copy plugin outputs from `packages/inbox/dist/` into an isolated Obsidian development vault; no development command deploys automatically.
 
-```sh
-npm ci
-npm run check
-npm run dev
-```
+## 3. Features
 
-`npm run check` runs type checking, linting, mocked component tests, builds, and output verification. `npm run dev` watches the library and gallery; `npm run build` also generates library declarations. Restart the watcher after changing build configuration.
+Beautiful Inbox captures Markdown, links, files, audio, and email. Native Bases layouts support processing, searching, filtering, and arranging captures. The shared design library provides native controls, lifecycle ownership, and theme-aware layouts.
 
-## Structure
+## 4. Architecture
 
-- `design/` contains the private `@beautiful/design` workspace, documentation, tests, and development gallery.
-- `packages/inbox/` contains Beautiful Inbox. Other Beautiful plugins can be added under `packages/`.
-- `assets/` is reserved for shared assets.
+`design/` owns shared presentation; `packages/` owns plugin behavior. Keep Obsidian external in bundles. Use native components and documented CSS variables, retain native defaults, and scope custom CSS to Beautiful-owned elements. Public exports are explicit in `design/src/index.ts`; CSS is exposed through `@beautiful/design/styles.css`. Register lifetimes with an Obsidian Component and dispose replaced surfaces. Keep gallery code out of library exports, avoid global state and import-time DOM changes, and preserve cross-plugin styles.
 
-`assets/` is intentionally empty and has no placeholder file. Git does not store empty directories; recreate it with `mkdir -p assets` after cloning.
+Use the exact project description, "A collection of beautiful Obsidian plugins.", in metadata and retain Mayaz Rakib's MIT attribution. Preserve required external names such as `onOpen` and `setValue`. Mocked DOM tests do not prove native Obsidian behavior; native evidence must identify the Obsidian version, theme, and platform. Avoid placeholder assets, empty plugin directories, and productivity features in design examples.
 
-## Design system
+## 5. Dependencies
 
-Read the [design system guide](design/README.md) for the public API, integration examples, gallery setup, and visual acceptance checklist. Plugins bundle the library directly and copy its stylesheet into their own `styles.css`; users do not install a separate Core plugin.
+| Dependency | Version | Use |
+|---|---|---|
+| Obsidian | 1.14.4 development SDK; Inbox requires 1.12.2+ | Native plugin APIs and Bases. |
+| TypeScript, esbuild, and Vitest | See `package-lock.json` | Compilation, bundling, and mocked tests. |
+| jsdom and ESLint | See `package-lock.json` | DOM test environment and explicitly invoked static checks. |
 
-The system inherits native control styling. Custom layouts use scoped rules and live Obsidian CSS variables. It does not set a custom palette, replace the user's theme, or override global application styles.
+## 6. Roadmap
 
-Automated tests use an explicit Obsidian mock. They do not establish native rendering, screen-reader behavior, mobile behavior, or compatibility with community themes. Use the gallery in Obsidian for those checks.
+The design library, gallery, and Inbox are implemented. Native platform acceptance remains separate from mocked tests. See the package READMEs for usage.
 
-## License
+## 7. Contributing
 
-[MIT](LICENSE). Copyright (c) 2026 Mayaz Rakib.
+Read `AGENTS.md` and the applicable skills in `.ai/skills/` before contributing. Set up the development environment with `task init`. Follow the repository conventions, preserve supported behavior, and add relevant tests for behavior changes. Run `task test` and `task build` before opening a pull request. Describe the change, its purpose, and the validation results in the pull request.
+
+## 8. License
+
+`beautiful-obsidian` is licensed under the MIT license. See LICENSE for the complete license text.
+
+See `ACKNOWLEDGEMENTS.md` for third-party notices and attributions.

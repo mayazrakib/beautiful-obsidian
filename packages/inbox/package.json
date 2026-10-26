@@ -15,8 +15,8 @@
         "url": "https://github.com/mayazrakib/beautiful-obsidian/issues"
     },
     "scripts": {
-        "dev": "node build.mjs --watch",
-        "build": "tsc --noEmit -p tsconfig.json && tsc -p tsconfig.types.json && node build.mjs",
+        "dev": "node ../../tools/scripts/build_inbox.mjs --watch",
+        "build": "tsc --noEmit -p tsconfig.json && tsc -p tsconfig.types.json && node ../../tools/scripts/build_inbox.mjs",
         "typecheck": "tsc --noEmit -p tsconfig.json"
     },
     "dependencies": {

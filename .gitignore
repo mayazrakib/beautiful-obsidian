@@ -1,9 +1,17 @@
+# Dependencies
 node_modules/
+
+# Build
 **/dist/
 coverage/
 *.tsbuildinfo
+
+# Environment
 .env
 .env.*
+!.env.example
+
+# Temporary Files
 .DS_Store
 __pycache__/
 *.pyc

@@ -16,8 +16,8 @@ import {
     create_text_input,
     create_toggle,
     create_toolbar,
-} from "../src/index";
-import type { DesignSurface } from "../src/index";
+} from "../../design/src/index";
+import type { DesignSurface } from "../../design/src/index";
 
 const VIEW_TYPE = "beautiful_design_gallery";
 

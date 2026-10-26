@@ -1,0 +1,56 @@
+{
+    "font_family": {
+        "font_sans": "Inter, system-ui, sans-serif",
+        "font_mono": "\"JetBrains Mono\", ui-monospace, monospace"
+    },
+    "font_size": {
+        "font_size_10": "10px",
+        "font_size_11": "11px",
+        "font_size_12": "12px",
+        "font_size_13": "13px",
+        "font_size_14": "14px",
+        "font_size_15": "15px",
+        "font_size_16": "16px",
+        "font_size_18": "18px",
+        "font_size_20": "20px",
+        "font_size_24": "24px",
+        "font_size_28": "28px",
+        "font_size_32": "32px",
+        "font_size_36": "36px",
+        "font_size_40": "40px",
+        "font_size_48": "48px",
+        "font_size_56": "56px",
+        "font_size_64": "64px",
+        "font_size_72": "72px"
+    },
+    "font_weight": {
+        "font_weight_400": 400,
+        "font_weight_450": 450,
+        "font_weight_500": 500,
+        "font_weight_550": 550,
+        "font_weight_600": 600,
+        "font_weight_650": 650,
+        "font_weight_700": 700
+    },
+    "line_height": {
+        "line_height_1": 1,
+        "line_height_1_1": 1.1,
+        "line_height_1_2": 1.2,
+        "line_height_1_25": 1.25,
+        "line_height_1_375": 1.375,
+        "line_height_1_5": 1.5,
+        "line_height_1_625": 1.625,
+        "line_height_1_75": 1.75
+    },
+    "letter_spacing": {
+        "tracking_negative_4": "-0.04em",
+        "tracking_negative_3": "-0.03em",
+        "tracking_negative_2": "-0.02em",
+        "tracking_negative_1": "-0.01em",
+        "tracking_0": "0em",
+        "tracking_1": "0.01em",
+        "tracking_2": "0.02em",
+        "tracking_3": "0.04em",
+        "tracking_4": "0.08em"
+    }
+}

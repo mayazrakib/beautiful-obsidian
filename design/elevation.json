@@ -1,0 +1,89 @@
+{
+    "radius": {
+        "radius_0": "0px",
+        "radius_1": "2px",
+        "radius_2": "4px",
+        "radius_3": "6px",
+        "radius_4": "8px",
+        "radius_5": "10px",
+        "radius_6": "12px",
+        "radius_8": "16px",
+        "radius_12": "24px",
+        "radius_full": "9999px"
+    },
+    "border_width": {
+        "border_0": "0px",
+        "border_1": "1px",
+        "border_2": "2px",
+        "border_3": "3px",
+        "border_4": "4px"
+    },
+    "opacity": {
+        "opacity_0": 0.0,
+        "opacity_5": 0.05,
+        "opacity_10": 0.1,
+        "opacity_15": 0.15,
+        "opacity_20": 0.2,
+        "opacity_25": 0.25,
+        "opacity_30": 0.3,
+        "opacity_40": 0.4,
+        "opacity_50": 0.5,
+        "opacity_60": 0.6,
+        "opacity_70": 0.7,
+        "opacity_80": 0.8,
+        "opacity_90": 0.9,
+        "opacity_95": 0.95,
+        "opacity_100": 1.0
+    },
+    "blur": {
+        "blur_0": "0px",
+        "blur_1": "2px",
+        "blur_2": "4px",
+        "blur_3": "8px",
+        "blur_4": "12px",
+        "blur_5": "16px",
+        "blur_6": "24px",
+        "blur_8": "32px",
+        "blur_12": "48px",
+        "blur_16": "64px"
+    },
+    "z_index": {
+        "z_negative": -1,
+        "z_0": 0,
+        "z_10": 10,
+        "z_20": 20,
+        "z_30": 30,
+        "z_40": 40,
+        "z_50": 50,
+        "z_100": 100,
+        "z_200": 200,
+        "z_300": 300,
+        "z_400": 400,
+        "z_500": 500,
+        "z_1000": 1000
+    },
+    "themes": {
+        "light": {
+            "shadow": {
+                "shadow_0": "none",
+                "shadow_1": "0 1px 2px rgb(0 0 0 / 0.05)",
+                "shadow_2": "0 2px 4px rgb(0 0 0 / 0.08)",
+                "shadow_3": "0 4px 8px rgb(0 0 0 / 0.10)",
+                "shadow_4": "0 8px 16px rgb(0 0 0 / 0.12)",
+                "shadow_5": "0 12px 24px rgb(0 0 0 / 0.16)",
+                "shadow_6": "0 20px 40px rgb(0 0 0 / 0.20)"
+            }
+        },
+        "dark": {
+            "shadow": {
+                "shadow_0": "none",
+                "shadow_1": "0 0 0 1px rgb(255 255 255 / 0.04)",
+                "shadow_2": "0 0 0 1px rgb(255 255 255 / 0.05), 0 2px 4px rgb(0 0 0 / 0.12)",
+                "shadow_3": "0 0 0 1px rgb(255 255 255 / 0.06), 0 4px 8px rgb(0 0 0 / 0.14)",
+                "shadow_4": "0 0 0 1px rgb(255 255 255 / 0.07), 0 8px 16px rgb(0 0 0 / 0.16)",
+                "shadow_5": "0 0 0 1px rgb(255 255 255 / 0.08), 0 12px 24px rgb(0 0 0 / 0.18)",
+                "shadow_6": "0 0 0 1px rgb(255 255 255 / 0.09), 0 20px 40px rgb(0 0 0 / 0.20)"
+            }
+        }
+    }
+}

@@ -49,9 +49,9 @@ From the repository root, run:
 ```sh
 npm ci
 npm run check
-python3 -B scripts/verify_inbox_canvas_native.py --self-test
-python3 -B scripts/verify_inbox_canvas_native.py
-python3 -B scripts/verify_inbox_native.py --output /tmp/beautiful_inbox_native_new.json
+python3 -B tools/scripts/verify_inbox_canvas_native.py --self-test
+python3 -B tools/scripts/verify_inbox_canvas_native.py
+python3 -B tools/scripts/verify_inbox_native.py --output /tmp/beautiful_inbox_native_new.json
 ```
 
 Native commands require the Windows test vault and its installed plugin. The harness refuses other vault paths. Run native harnesses sequentially. Each benchmark output path must be new; preserve failed reports.

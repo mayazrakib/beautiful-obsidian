@@ -1,0 +1,23 @@
+version: '3'
+
+tasks:
+    default:
+        desc: Display available tasks.
+        cmds:
+            - task --list
+    help:
+        desc: Describe available project tasks.
+        cmds:
+            - task --list
+    init:
+        desc: Initialize the development environment.
+        cmds:
+            - 'npm --prefix ../.. ci && npm --prefix ../.. run build --workspace @beautiful/design'
+    test:
+        desc: Execute automated tests.
+        cmds:
+            - 'npm --prefix ../.. test -- packages/inbox/tests'
+    build:
+        desc: Build project artifacts.
+        cmds:
+            - 'npm --prefix ../.. run build --workspace @beautiful/inbox'

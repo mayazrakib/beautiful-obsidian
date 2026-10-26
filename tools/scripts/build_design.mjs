@@ -23,7 +23,7 @@ const BUILD_CONTEXTS = await Promise.all([
         sourcemap: true,
     }),
     context({
-        entryPoints: ["gallery/main.ts"],
+        entryPoints: ["../showcase/design/main.ts"],
         outfile: "dist/gallery/main.js",
         bundle: true,
         format: "cjs",
@@ -34,15 +34,15 @@ const BUILD_CONTEXTS = await Promise.all([
             name: "copy-gallery-assets",
             setup(build) {
                 build.onLoad(
-                    { filter: /gallery[/\\]main\.ts$/ },
+                    { filter: /showcase[/\\]design[/\\]main\.ts$/ },
                     async (args) => ({
                         contents: await readFile(
                             args.path,
                             "utf8",
                         ),
                         loader: "ts",
-                        resolveDir: resolve("gallery"),
-                        watchFiles: [resolve("src/styles.css"), resolve("gallery/manifest.json")],
+                        resolveDir: resolve("../showcase/design"),
+                        watchFiles: [resolve("src/styles.css"), resolve("../showcase/design/manifest.json")],
                     }),
                 );
 
@@ -57,7 +57,7 @@ const BUILD_CONTEXTS = await Promise.all([
                             "dist/gallery/styles.css",
                         ),
                         copyFile(
-                            "gallery/manifest.json",
+                            "../showcase/design/manifest.json",
                             "dist/gallery/manifest.json",
                         ),
                     ]);

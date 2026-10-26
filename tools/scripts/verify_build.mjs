@@ -5,7 +5,7 @@ import { createContext, runInContext } from "node:vm";
 import { build } from "esbuild";
 
 const DESCRIPTION = "A collection of beautiful Obsidian plugins.";
-const PACKAGE_PATHS = ["package.json", "design/package.json", "design/gallery/manifest.json", "packages/inbox/package.json", "packages/inbox/manifest.json"];
+const PACKAGE_PATHS = ["package.json", "design/package.json", "showcase/design/manifest.json", "packages/inbox/package.json", "packages/inbox/manifest.json"];
 
 for (const package_path of PACKAGE_PATHS) {
     const metadata = JSON.parse(await readFile(
@@ -137,7 +137,7 @@ assert.equal(
         "utf8",
     ),
     await readFile(
-        "design/gallery/manifest.json",
+        "showcase/design/manifest.json",
         "utf8",
     ),
 );

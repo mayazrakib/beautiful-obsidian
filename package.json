@@ -23,8 +23,8 @@
         "packages/*"
     ],
     "scripts": {
-        "dev": "npm run build --workspace=@beautiful/design && node scripts/dev.mjs",
-        "build": "npm run build --workspace=@beautiful/design && npm run build --workspace=@beautiful/inbox && node scripts/verify_build.mjs",
+        "dev": "npm run build --workspace=@beautiful/design && node tools/scripts/dev.mjs",
+        "build": "npm run build --workspace=@beautiful/design && npm run build --workspace=@beautiful/inbox && node tools/scripts/verify_build.mjs",
         "typecheck": "npm run typecheck --workspaces --if-present",
         "lint": "eslint .",
         "test": "vitest run",
@@ -40,10 +40,10 @@
         "esbuild": "^0.28.2",
         "eslint": "^10.13.0",
         "globals": "^17.6.0",
-        "jsdom": "^29.1.1",
-        "typescript": "~5.9.3",
+        "jsdom": "^30.1.3",
+        "typescript": "^6.0.3",
         "typescript-eslint": "^8.72.0",
-        "vitest": "^4.1.12"
+        "vitest": "^5.0.5"
     },
     "packageManager": "npm@11.19.1"
 }

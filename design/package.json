@@ -25,8 +25,8 @@
         "./styles.css": "./dist/styles.css"
     },
     "scripts": {
-        "dev": "node build.mjs --watch",
-        "build": "tsc -p tsconfig.build.json && node build.mjs",
+        "dev": "node ../tools/scripts/build_design.mjs --watch",
+        "build": "tsc -p tsconfig.build.json && node ../tools/scripts/build_design.mjs",
         "typecheck": "tsc --noEmit -p tsconfig.json"
     },
     "peerDependencies": {
