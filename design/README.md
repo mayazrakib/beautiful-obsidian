@@ -11,29 +11,32 @@
 
 ## 1. Introduction
 
-Native Obsidian controls, layouts, lifecycle ownership, and a development gallery.
+`@beautiful/design` is the shared design library for Beautiful plugins. It provides native Obsidian controls, layouts, lifecycle ownership, and a development gallery.
 
 ## 2. Usage
 
-Run `task init`, `task test`, and `task build` here. Import explicit exports from `@beautiful/design` and its stylesheet from `@beautiful/design/styles.css`. Bundle Obsidian externally.
+From this directory, run `task init`, `task test`, and `task build`. Import the explicit exports from `@beautiful/design` and the stylesheet from `@beautiful/design/styles.css`. Bundle Obsidian as an external.
 
 ## 3. Features
 
-Controls, menus, settings rows, modals, record layouts, feedback, and lifecycle cleanup.
+- Controls, inputs, menus, settings rows, and modals.
+- Record layouts and feedback surfaces.
+- Lifecycle cleanup tied to Obsidian components.
 
 ## 4. Architecture
 
-`src/` owns the public design API. `../showcase/design/` owns the gallery; emitted gallery files remain in `dist/gallery/`. Register views with an Obsidian Component, dispose replaced surfaces, and retain scoped CSS and native theme variables. Shared Meson JSON tokens do not override Obsidian themes.
+`src/` owns the public design API. `../showcase/design/` owns the gallery, and its emitted files go to `dist/gallery/`. Views register with an Obsidian `Component`, replaced surfaces are disposed of, and CSS stays scoped and uses native theme variables. Shared Meson JSON tokens don't override Obsidian themes.
 
 ## 5. Dependencies
 
 | Dependency | Version | Use |
 |---|---|---|
-| Obsidian | 1.14.4 | Runtime and build integration; complete declarations and resolved versions remain in the workspace manifests and root lockfiles. |
+| `obsidian` | 1.14.4 | Development: plugin API declarations |
+| `obsidian` | Peer range `>=1.12.0 <2`; 1.14.4 resolved | Runtime peer: provided by the host Obsidian app |
 
 ## 6. Roadmap
 
-The capabilities above are implemented. No additional release commitments are recorded here.
+The capabilities above are implemented. No further release commitments are recorded.
 
 ## 7. Contributing
 

@@ -3,7 +3,7 @@
 ![Version](https://img.shields.io/badge/Version-0.1.0-737373?style=flat-square)
 ![License](https://img.shields.io/badge/License-MIT-737373?style=flat-square)
 ![Languages](https://img.shields.io/badge/Languages-TypeScript-737373?style=flat-square)
-![Frameworks](https://img.shields.io/badge/Frameworks-%40beautiful%2Fdesign%20and%20Obsidian-737373?style=flat-square)
+![Frameworks](https://img.shields.io/badge/Frameworks-%40beautiful%2Fdesign%2C%20Obsidian-737373?style=flat-square)
 ![Compatibility](https://img.shields.io/badge/Compatibility-Unknown-737373?style=flat-square)
 ![Build](https://img.shields.io/badge/Build-Not%20verified-737373?style=flat-square)
 ![Tests](https://img.shields.io/badge/Tests-Not%20measured-737373?style=flat-square)
@@ -11,29 +11,32 @@
 
 ## 1. Introduction
 
-A universal Markdown capture and processing system for Obsidian.
+`@beautiful/inbox` is Beautiful Inbox, a universal Markdown capture and processing system for Obsidian.
 
 ## 2. Usage
 
-Use Obsidian 1.12.2 or newer with Bases enabled. Run `task init`, `task test`, and `task build` here. Copy `dist/` contents to an isolated vault plugin directory. Development commands never deploy automatically.
+Use Obsidian 1.12.2 or newer with Bases enabled. From this directory, run `task init`, `task test`, and `task build`. Then copy the contents of `dist/` into a plugin directory in an isolated vault. Development commands never deploy automatically.
 
 ## 3. Features
 
-Capture text, links, files, audio, and email; process records through native Bases views and a theme-aware canvas.
+- Capture text, links, files, audio, and email.
+- Process records through native Bases views.
+- Arrange captures on a theme-aware canvas.
 
 ## 4. Architecture
 
-`src/storage/` owns Markdown persistence; `src/integrations/` owns import adapters; `src/ui/` owns native views. Preserve immutable IDs, concurrent-edit checks, recoverable vault trash, unsaved drafts, and external note edits. See [verification](VERIFICATION.md) for native acceptance.
+`src/storage/` owns Markdown persistence, `src/integrations/` owns import adapters, and `src/ui/` owns native views. Changes must preserve immutable IDs, concurrent-edit checks, recoverable vault trash, unsaved drafts, and external note edits. [VERIFICATION.md](VERIFICATION.md) records native acceptance evidence.
 
 ## 5. Dependencies
 
 | Dependency | Version | Use |
 |---|---|---|
-| @beautiful/design and Obsidian | 0.1.0 and 1.14.4 SDK | Runtime and build integration; complete declarations and resolved versions remain in the workspace manifests and root lockfiles. |
+| `@beautiful/design` | 0.1.0, workspace link | Runtime: shared controls and layouts |
+| `obsidian` | 1.14.4 | Development: plugin API declarations |
 
 ## 6. Roadmap
 
-The capabilities above are implemented. No additional release commitments are recorded here.
+The capabilities above are implemented. No further release commitments are recorded.
 
 ## 7. Contributing
 
