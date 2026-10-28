@@ -74,5 +74,3 @@ Read `AGENTS.md` and the applicable skills in `.ai/skills/` before contributing.
 ## 8. License
 
 `beautiful-obsidian` is licensed under the MIT license. See LICENSE for the complete license text.
-
-See `ACKNOWLEDGEMENTS.md` for third-party notices and attributions.
