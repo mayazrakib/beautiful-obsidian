@@ -1,5 +1,3 @@
-# `beautiful-obsidian`
-
 ![Version](https://img.shields.io/badge/Version-0.1.0-737373?style=flat-square)
 ![License](https://img.shields.io/badge/License-MIT-737373?style=flat-square)
 ![Languages](https://img.shields.io/badge/Languages-TypeScript%2C%20Python-737373?style=flat-square)
@@ -32,7 +30,7 @@ To try a plugin, copy its build output, such as `packages/inbox/dist/`, into an 
 
 `design/` owns shared presentation, and `packages/` owns plugin behavior. `design/src/index.ts` declares the library's public exports, and `@beautiful/design/styles.css` exposes its CSS. Plugin bundles keep Obsidian external. Python scripts in `tools/scripts/` support native verification.
 
-### Conventions
+### 4.1. Conventions
 
 - Use native components and documented CSS variables, keep native defaults, and scope custom CSS to Beautiful-owned elements.
 - Register lifetimes with an Obsidian `Component` and dispose of replaced surfaces.
